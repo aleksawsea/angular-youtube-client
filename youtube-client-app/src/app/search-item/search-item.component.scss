@@ -1,0 +1,47 @@
+.result-card {
+  height: 100%;
+}
+
+.video-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.1rem;
+
+  .stat-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+  }
+}
+
+.detailed-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .video-stats {
+    order: 1;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .card-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .video-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    .description-title {
+      font-weight: 500;
+    }
+  }
+}

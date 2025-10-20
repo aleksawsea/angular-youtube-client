@@ -1,0 +1,8 @@
+<div class="search-results-container">
+  <div *ngIf="isLoading">
+    <mat-spinner diameter="40"></mat-spinner>
+  </div>
+  <div *ngIf="!isLoading && results.length === 0">No results are found.</div>
+  <app-search-item *ngFor="let result of results" [videoId]="result?.id?.videoId">
+  </app-search-item>
+</div>

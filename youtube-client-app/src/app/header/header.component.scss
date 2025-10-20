@@ -1,0 +1,71 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 1.6rem;
+  height: 8rem;
+  background-color: var(--header-bg);
+}
+
+.logo-search-container {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-container {
+  display: flex;
+  flex: 1;
+  max-width: 39.6rem;
+  align-items: center;
+  padding: 1.2rem;
+
+  .search-input {
+    border: none;
+    flex: 1;
+    padding: 0.5rem;
+    height: 2.4rem;
+    margin-bottom: -0.15rem;
+    width: 100%;
+  }
+}
+
+.search-button {
+  padding: 0;
+  border: none;
+  margin-bottom: -0.5rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-left: 18.9rem;
+  margin-right: 15.6rem;
+}
+
+.username {
+  margin-right: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.custom-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+button[mat-icon-button] {
+  &.mat-icon-button {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

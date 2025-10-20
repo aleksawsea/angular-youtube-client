@@ -1,0 +1,49 @@
+<mat-card
+  class="result-card"
+  [ngStyle]="{ 'border-bottom': '5px solid ' + getBottomLineColor() }"
+  [class.detailed-card]="isDetailedView"
+>
+  <img
+    mat-card-image
+    *ngIf="!isDetailedView"
+    [src]="videoDetails?.snippet?.thumbnails?.medium?.url"
+    alt="video thumbnail"
+  />
+
+  <div *ngIf="isLoading">
+    <mat-spinner diameter="40"></mat-spinner>
+  </div>
+
+  <div *ngIf="videoDetails" class="video-stats">
+    <div class="stat-item">
+      <mat-icon>visibility</mat-icon>
+      <span>{{ videoDetails?.statistics?.viewCount }}</span>
+    </div>
+
+    <div class="stat-item">
+      <mat-icon>favorite</mat-icon>
+      <span>{{ videoDetails?.statistics?.likeCount }}</span>
+    </div>
+
+    <div class="stat-item">
+      <mat-icon>chat_bubble</mat-icon>
+      <span>{{ videoDetails?.statistics?.commentCount }}</span>
+    </div>
+  </div>
+
+  <mat-card-header class="card-header">
+    <mat-card-title>{{ videoDetails?.snippet?.title }}</mat-card-title>
+    <mat-card-subtitle *ngIf="isDetailedView">{{
+      videoDetails?.snippet?.publishedAt
+    }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content *ngIf="isDetailedView" class="video-description">
+    <p class="description-title">Description:</p>
+    <p>{{ videoDetails?.snippet?.description }}</p>
+  </mat-card-content>
+
+  <mat-card-actions *ngIf="!isDetailedView">
+    <button mat-button [routerLink]="['/videos', videoDetails?.id]">MORE...</button>
+  </mat-card-actions>
+</mat-card>
